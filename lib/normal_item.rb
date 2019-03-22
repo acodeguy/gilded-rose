@@ -15,6 +15,7 @@ class NormalItem < Item
     end
 
     @quality < 0 ? @quality = 0 : @quality = @quality
+    @quality > 50 ? @quality = 50 : @quality = @quality
 
   end
 
