@@ -10,6 +10,7 @@ class NormalItem < Item
     when 'Aged Brie'
       @sell_in >= 0 ? @quality += 1 : @quality += 2
     when 'Backstage passes to a TAFKAL80ETC concert'
+      @sell_in > 10 ? @quality += 1 : @quality = @quality
     else # generic item
       @sell_in < 0 ? @quality -= 2 : @quality -= 1
     end
