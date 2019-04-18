@@ -15,17 +15,16 @@ class NormalItem < Item
       alter_generic_item
     end
 
-    @quality < 0 ? @quality = 0 : @quality = @quality
-    @quality > 50 ? @quality = 50 : @quality = @quality
+    enforce_upper_and_lower_quality_bounds
   end
 
   private
 
   def alter_pass
-    @sell_in > 10 ? @quality += 1 : @quality = @quality
-    @sell_in > 5 && @sell_in <= 10 ? @quality += 2 : @quality = @quality
-    @sell_in > 0 && @sell_in <= 5 ? @quality += 3 : @quality = @quality
-    @sell_in <= 0 ? @quality = 0 : @quality = @quality
+    @sell_in > 10 ? @quality += 1 : @quality
+    @sell_in > 5 && @sell_in <= 10 ? @quality += 2 : @quality
+    @sell_in > 0 && @sell_in <= 5 ? @quality += 3 : @quality
+    @sell_in <= 0 ? @quality = 0 : @quality
   end
 
   def alter_aged_brie
@@ -34,5 +33,10 @@ class NormalItem < Item
 
   def alter_generic_item
     @sell_in < 0 ? @quality -= 2 : @quality -= 1
+  end
+
+  def enforce_upper_and_lower_quality_bounds
+    @quality < 0 ? @quality = 0 : @quality
+    @quality > 50 ? @quality = 50 : @quality
   end
 end
