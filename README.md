@@ -7,7 +7,12 @@ Looking at the objects used in the project, I could see that we had a few differ
 
 I chose to use this supplied Item class as the base class for a new set of sub-classes:
 
-* NormalItem
-* LegendaryItem
+* GenericItem
+* Sulfruas
+* AgedBrie
+* BackstagePass
 
 Each class has its own set of overridden and custom methods to handle their own tasks in their own way.
+
+## Tests
+Tests were written in RSpec and are currently at 100% coverage, all passing.
