@@ -16,3 +16,6 @@ Each class has its own set of overridden and custom methods to handle their own 
 
 ## Tests
 Tests were written in RSpec and are currently at 100% coverage, all passing.
+
+## Code Quality
+Linted with Rubocop, no issues detected.
